@@ -962,3 +962,200 @@ a.trust-badge:hover { color: var(--text); }
   /* Add bottom padding to body so footer isn't hidden behind floating CTA */
   body { padding-bottom: 56px; }
 }
+
+/* ============================================
+   Booking Integration
+   ============================================ */
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid rgba(255,255,255,0.25);
+}
+.btn-secondary:hover {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
+
+.nav-book-link {
+  background: var(--accent) !important;
+  color: #fff !important;
+  padding: 0.4rem 1rem !important;
+  border-radius: var(--radius-sm) !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.2s !important;
+}
+.nav-book-link:hover {
+  background: var(--accent-hover) !important;
+}
+
+.services-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 768px) {
+  .services-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   Booking Modal
+   ============================================ */
+
+.booking-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.booking-modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.booking-modal {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  max-width: 480px;
+  width: 100%;
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+  position: relative;
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.3s ease;
+}
+.booking-modal-overlay.active .booking-modal {
+  transform: translateY(0) scale(1);
+}
+
+.booking-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 1.6rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.booking-modal-close:hover { color: #fff; }
+
+.booking-modal-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  margin: 0 auto 1rem;
+}
+
+.booking-modal h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #fff;
+}
+
+.booking-modal-sub {
+  color: #666;
+  font-size: 0.85rem;
+  margin-bottom: 1.8rem;
+}
+
+.booking-modal-cards {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.booking-modal-card {
+  flex: 1;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  position: relative;
+}
+.booking-modal-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 32, 39, 0.15);
+}
+
+.booking-modal-icon {
+  font-size: 2rem;
+  margin-bottom: 0.7rem;
+}
+
+.booking-modal-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.booking-modal-card p {
+  color: #888;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+}
+
+.booking-modal-deposit {
+  font-size: 0.7rem;
+  color: #666;
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.booking-modal-arrow {
+  font-size: 1.1rem;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.booking-modal-card:hover .booking-modal-arrow {
+  opacity: 1;
+}
+
+.booking-modal-policy {
+  color: #444;
+  font-size: 0.68rem;
+  margin-top: 1.5rem;
+  line-height: 1.5;
+}
+
+.booking-modal-phone {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: #555;
+  font-size: 0.78rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.booking-modal-phone:hover { color: var(--accent); }
+
+@media (max-width: 480px) {
+  .booking-modal { padding: 2rem 1.2rem 1.5rem; }
+  .booking-modal-cards { flex-direction: column; }
+}
