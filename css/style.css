@@ -540,17 +540,15 @@ a.trust-badge:hover { color: var(--text); }
   font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
-.service-line h3 { font-size: 1.15rem; font-weight: 600; line-height: 1.3; }
-.service-line h3 a {
+.service-line h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
   min-height: 44px;
   color: var(--text);
 }
-.service-line h3 a:hover { color: #ff646a; }
-.service-line h3 a span { color: #ff646a; font-size: 1.1rem; }
 .service-line p {
   color: var(--text-secondary);
   font-size: 0.875rem;
